@@ -323,3 +323,18 @@
     <script src="js/form.js"></script>
 </body>
 </html>
+(function () {
+    emailjs.init("2IIMj-dN305Vw_6cq"); // Reemplaza con tu clave pública de EmailJS
+})();
+
+document.getElementById("form1").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_j79fepy', 'template_a2zgzqj', this)
+        .then(function () {
+            document.getElementById("mensajeAlert").textContent = "✅ Ticket enviado correctamente.";
+            document.getElementById("form1").reset();
+        }, function (error) {
+            document.getElementById("mensajeAlert").textContent = "❌ Error al enviar: " + error.text;
+        });
+});
