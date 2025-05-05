@@ -321,9 +321,7 @@
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/form.js"></script>
-</body>
-</html>
-(function () {
+    (function () {
     emailjs.init("2IIMj-dN305Vw_6cq"); // Reemplaza con tu clave pública de EmailJS
 })();
 
@@ -338,3 +336,6 @@ document.getElementById("form1").addEventListener("submit", function (e) {
             document.getElementById("mensajeAlert").textContent = "❌ Error al enviar: " + error.text;
         });
 });
+
+</body>
+</html>
