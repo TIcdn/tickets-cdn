@@ -321,6 +321,31 @@
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/form.js"></script>
+<!-- Scripts de EmailJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    // Inicializa EmailJS con tu public key
+    emailjs.init("2IIMj-dN305Vw_6cq");
 
+    const form = document.getElementById('form1');
+    const mensaje = document.getElementById("mensajeAlert");
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // evita recargar la página
+      mensaje.textContent = "Enviando ticket...";
+
+      emailjs.sendForm('service_j79fepy', 'template_a2zgzqjv', form)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          mensaje.textContent = "¡Ticket enviado con éxito!";
+          form.reset();
+        }, function(error) {
+          console.error('FAILED...', error);
+          mensaje.textContent = "Error al enviar el ticket. Revise la consola.";
+        });
+    });
+  })();
+</script>
 </body>
 </html>
