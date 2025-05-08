@@ -297,7 +297,7 @@
  <select id="departamentoSelect" name="departamento" required>
     <option value="" disabled selected>Seleccione un departamento</option>
     <option value="Administracion">Administracion</option>
-     <option value="ACAI">ACAI</option>
+    <option value="ACAI">ACAI</option>
     <option value="Finca">Finca</option>
     <option value="Colegio-Profesores">Colegio-Profesores</option>
     <option value="Miscelaneos">Miscelaneos</option>
@@ -335,7 +335,7 @@
       event.preventDefault(); // evita recargar la página
       mensaje.textContent = "Enviando ticket...";
 
-      emailjs.sendForm('service_j79fepy', 'template_a2zgzqjv', form)
+      emailjs.sendForm('service_j79fepy', 'template_a2zgzqj', form)
         .then(function(response) {
           console.log('SUCCESS!', response.status, response.text);
           mensaje.textContent = "¡Ticket enviado con éxito!";
