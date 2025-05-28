@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ciudad de Los Ninos - Sistema de Tickets Internos</title>
     <link rel="icon" href="imagenes/logo.png">
+    <link rel="icon" href="https://www.ciudaddelosninoscr.org/pics/header-logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -292,57 +293,98 @@
             <form method="post" id="form1">
                 <label for="nombreTxt">Nombre Completo:</label>
                 <input id="nombreTxt" name="nombre" type="text" placeholder="Escriba su nombre completo" required>
+
  <label for="AreaSelect">Area:</label>
  <select id="departamentoSelect" name="departamento" required>
     <option value="" disabled selected>Seleccione un departamento</option>
     <option value="Administracion">Administracion</option>
     <option value="ACAI">ACAI</option>
-    <option value="Finca">Finca</option>
     <option value="Colegio-Profesores">Colegio-Profesores</option>
-    <option value="Miscelaneos">Miscelaneos</option>
     <option value="Cocina">Cocina</option>
-     <option value="Formador Humano">Formador Humano</option>
+    <option value="Finca">Finca</option>
+    <option value="Formador Humano">Formador Humano</option> 
+    <option value="Frailes">Frailes</option> 
+    <option value="Miscelaneos">Miscelaneos</option>
+    
+     
 </select>     
-                
+  
                 <label for="lugarTxt">Ubicacion del inconveniente:</label>
                 <input id="lugarTxt" name="lugar" type="text" placeholder="Describa la ubicacion" required>
+          
+
+ 
                 <label for="mensajeTxt">Inconveniente:</label>
                 <textarea id="mensajeTxt" name="comentarios" placeholder="Describa detalladamente su problema o solicitud" required></textarea>
-                
+
                 <p class="centrado" id="mensajeAlert"></p>
                 <input type="submit" value="Enviar Ticket" class="botones" id="btnSend">
+
+<label for="consecutivo">Numero de Ticket:</label>
+<input type="text" id="consecutivo" name="consecutivo" readonly>
+
+
             </form>
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="js/form.js"></script>
-<!-- Scripts de EmailJS -->
+     <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Agua Caliente de Cartago, Costa Rica</p>
+                <p><i class="fas fa-envelope"></i> ti@ciudaddelosninoscr.org</p>
+
+              <p>&copy; 2025 Ciudad de Los Ninos. Todos los derechos reservados.</p>
+
+            </div>
+            <div class="footer-col">
+            </div>
+            <div class="footer-col">  
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Generar un ID tipo TICKET-1324 (4 dígitos aleatorios)
+    const numeroAleatorio = Math.floor(1000 + Math.random() * 9000);
+    const ticketID = "TICKET-" + numeroAleatorio;
+    
+    // Asignarlo al campo del formulario
+    document.getElementById("consecutivo").value = ticketID;
+});
+</script>
+ 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/form.js"></script>
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script type="text/javascript">
   (function() {
-    // Inicializa EmailJS con tu public key
-    emailjs.init("2IIMj-dN305Vw_6cq");
+    
+  emailjs.init("2IIMj-dN305Vw_6cq");
 
-    const form = document.getElementById('form1');
-    const mensaje = document.getElementById("mensajeAlert");
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault(); // evita recargar la página
-      mensaje.textContent = "Enviando ticket...";
+const form = document.getElementById('form1');
+const mensaje = document.getElementById("mensajeAlert");
 
-      emailjs.sendForm('service_j79fepy', 'template_a2zgzqj', form)
-        .then(function(response) {
-          console.log('SUCCESS!', response.status, response.text);
-          mensaje.textContent = "¡Ticket enviado con éxito!";
-          form.reset();
-        }, function(error) {
-          console.error('FAILED...', error);
-          mensaje.textContent = "Error al enviar el ticket. Revise la consola.";
-             <div class="container copyright">
-            <p>&copy; 2025 Ciudad de Los Niños. Todos los derechos reservados.</p>
-        </div>
-  
+
+  form.addEventListener('submit', function(event) {
+event.preventDefault(); 
+ mensaje.textContent = "Enviando ticket...";
+
+emailjs.sendForm('service_j79fepy', 'template_a2zgzqj', form)
+.then(function(response) {
+ console.log('SUCCESS!', response.status, response.text);
+ mensaje.textContent = "¡Ticket enviado con éxito!";
+form.reset();
+
+}, function(error) {
+ 
+  console.error('FAILED...', error);
+  mensaje.textContent = "Error al enviar el ticket. Revise la consola.";
+ <div class="container copyright">
+
+      <p>&copy; @2025 Ciudad de Los Ninos. Todos los derechos reservados.</p>
+                
+                    
 </body>
 </html>
