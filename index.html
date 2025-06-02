@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciudad de Los Ninos - Sistema de Tickets Internos</title>
-    <link rel="icon" href="imagenes/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        * {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciudad de Los Niños - Sistema de Tickets Internos</title>
+  <link rel="icon" href="https://www.ciudaddelosninoscr.org/pics/header-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Montserrat', sans-serif; background: #f5f5f5; color: #002060; padding: 2rem; }
+    form { background: #fff; padding: 2rem; border-radius: 8px; max-width: 600px; margin: auto; box-shadow: 0 0 10px #ccc; }
+    label { font-weight: bold; margin-top: 1rem; display: block; }
+    input, textarea, select { width: 100%; padding: 0.8rem; margin-top: 0.5rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+    .botones { background-color: #e61610; color: white; border: none; padding: 0.8rem 1.5rem; cursor: pointer; border-radius: 4px; }
+    .botones:hover { background-color: #c01209; }
+    .centrado { text-align: center; font-weight: bold; margin-top: 1rem; }
+  </style>
+     {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -21,6 +28,7 @@
             line-height: 1.6;
         }
 
+        /* Header */
         header {
             background-color: #002060;
             color: white;
@@ -49,6 +57,7 @@
             color: #fff;
         }
 
+        /* Navegación */
         nav {
             background-color: #e61610;
             padding: 0.5rem 0;
@@ -77,6 +86,7 @@
             text-decoration: underline;
         }
 
+        /* Contenido principal */
         .section {
             padding: 3rem 0;
             width: 90%;
@@ -100,6 +110,7 @@
             color: #444;
         }
 
+        /* Formulario */
         .formulario-contacto {
             background-color: white;
             padding: 2rem;
@@ -178,6 +189,7 @@
             color: #002060;
         }
 
+        /* Footer */
         .footer {
             background-color: #002060;
             color: white;
@@ -219,6 +231,7 @@
             color: #e61610;
         }
 
+        /* Modal */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -240,6 +253,7 @@
             z-index: 9998;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
@@ -264,47 +278,70 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo-container">
-                <img src="https://www.ciudaddelosninoscr.org//pics/header-logo.png" alt="logo" width="300" height="175">
-            </div>
-        </div>
-    </header>
-    <div class="section">
-        <div class="page-title">
-            <h1>Sistema de Tickets Internos</h1>
-            <p>Complete el formulario para crear un nuevo ticket de soporte</p>
-        </div>
+  <h1 style="text-align: center;">Sistema de Tickets Internos</h1>
+  <p style="text-align: center;">Complete TODOS los campos para enviar su solicitud</p>
 
-        <div class="formulario-contacto">
-            <form method="post" id="form1">
-                <label for="nombreTxt">Nombre Completo:</label>
-                <input id="nombreTxt" name="nombre" type="text" placeholder="Escriba su nombre completo" required>
+  <form id="form1">
+    <label for="nombreTxt">Nombre Completo:</label>
+    <input id="nombreTxt" name="nombre" type="text" required>
 
- <label for="AreaSelect">Area:</label>
- <select id="departamentoSelect" name="departamento" required>
-    <option value="" disabled selected>Seleccione un departamento</option>
-    <option value="Administracion">Administracion</option>
-    <option value="Finca">Finca</option>
-    <option value="Colegio">Colegio</option>
-    <option value="Miscelaneos">Miscelaneos</option>
-    <option value="Cocina">Cocina</option>
-    <option value="Profesores">Profesores</option>
-</select>     
-       
-                <label for="lugarTxt">Ubicacion del inconveniente:</label>
-                <input id="lugarTxt" name="lugar" type="text" placeholder="Describa la ubicacion" required>
- 
-                <label for="mensajeTxt">Inconveniente:</label>
-                <textarea id="mensajeTxt" name="comentarios" placeholder="Describa detalladamente su problema o solicitud" required></textarea>
-                
-                <p class="centrado" id="mensajeAlert"></p>
-                <input type="submit" value="Enviar Ticket" class="botones" id="btnSend">
-            </form>
-        </div>
-    </div>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="js/form.js"></script>
+    <label for="departamentoSelect">Área:</label>
+    <select id="departamentoSelect" name="departamento" required>
+      <option value="" disabled selected>Seleccione un departamento</option>
+      <option value="Administracion">Administración</option>
+      <option value="ACAI">ACAI</option>
+      <option value="Colegio-Profesores">Colegio - Profesores</option>
+      <option value="Cocina">Cocina</option>
+      <option value="Finca">Finca</option>
+      <option value="Formador Humano">Formador Humano</option>
+      <option value="Frailes">Frailes</option>
+      <option value="Miscelaneos">Misceláneos</option>
+    </select>
+
+    <label for="lugarTxt">Ubicación del inconveniente:</label>
+    <input id="lugarTxt" name="lugar" type="text" required>
+
+    <label for="consecutivo">Número de Ticket:</label>
+    <input type="text" id="consecutivo" name="consecutivo" readonly>
+
+    <label for="mensajeTxt">Inconveniente:</label>
+    <textarea id="mensajeTxt" name="comentarios" required></textarea>
+
+    <p class="centrado" id="mensajeAlert"></p>
+    <input type="submit" value="Enviar" class="botones">
+  </form>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+   
+      emailjs.init("2IIMj-dN305Vw_6cq"); 
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const numeroAleatorio = Math.floor(1000 + Math.random() * 9000);
+      const ticketID = "TICKET-" + numeroAleatorio;
+      document.getElementById("consecutivo").value = ticketID;
+    });
+
+    const form = document.getElementById('form1');
+    const mensaje = document.getElementById("mensajeAlert");
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      mensaje.textContent = "Enviando ticket...";
+
+      emailjs.sendForm('service_j79fepy', 'template_a2zgzqj', form)
+        .then(function (response) {
+          console.log('SUCCESS!', response.status, response.text);
+          mensaje.textContent = "¡Ticket enviado con éxito!";
+          form.reset();
+
+          const nuevo = "TICKET-" + Math.floor(1000 + Math.random() * 9000);
+          document.getElementById("consecutivo").value = nuevo;
+        }, function (error) {
+          console.error('FAILED...', error);
+          mensaje.textContent = "Error al enviar el ticket. Revise la consola.";
+        });
+    });
+  </script>
 </body>
 </html>
