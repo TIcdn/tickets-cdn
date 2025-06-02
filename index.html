@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        /* Estilos generales */
         * {
             margin: 0;
             padding: 0;
@@ -22,7 +21,6 @@
             line-height: 1.6;
         }
 
-        /* Header */
         header {
             background-color: #002060;
             color: white;
@@ -51,7 +49,6 @@
             color: #fff;
         }
 
-        /* Navegación */
         nav {
             background-color: #e61610;
             padding: 0.5rem 0;
@@ -80,7 +77,6 @@
             text-decoration: underline;
         }
 
-        /* Contenido principal */
         .section {
             padding: 3rem 0;
             width: 90%;
@@ -104,7 +100,6 @@
             color: #444;
         }
 
-        /* Formulario */
         .formulario-contacto {
             background-color: white;
             padding: 2rem;
@@ -183,7 +178,6 @@
             color: #002060;
         }
 
-        /* Footer */
         .footer {
             background-color: #002060;
             color: white;
@@ -225,7 +219,6 @@
             color: #e61610;
         }
 
-        /* Modal */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -247,7 +240,6 @@
             z-index: 9998;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
@@ -272,7 +264,6 @@
 </head>
 
 <body>
-    <!-- Header -->
     <header>
         <div class="header-container">
             <div class="logo-container">
@@ -280,8 +271,6 @@
             </div>
         </div>
     </header>
-
-    <!-- Contenido principal -->
     <div class="section">
         <div class="page-title">
             <h1>Sistema de Tickets Internos</h1>
@@ -306,8 +295,6 @@
        
                 <label for="lugarTxt">Ubicacion del inconveniente:</label>
                 <input id="lugarTxt" name="lugar" type="text" placeholder="Describa la ubicacion" required>
-          
-
  
                 <label for="mensajeTxt">Inconveniente:</label>
                 <textarea id="mensajeTxt" name="comentarios" placeholder="Describa detalladamente su problema o solicitud" required></textarea>
@@ -317,11 +304,7 @@
             </form>
         </div>
     </div>
-
-    <!-- Scripts -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/form.js"></script>
-
 </body>
 </html>
-
