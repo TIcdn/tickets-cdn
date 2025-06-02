@@ -346,25 +346,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const form = document.getElementById('form1');
 const mensaje = document.getElementById("mensajeAlert");
-
   form.addEventListener('submit', function(event) {
 event.preventDefault(); 
  mensaje.textContent = "Enviando ticket...";
-
 emailjs.sendForm('service_j79fepy', 'template_a2zgzqj', form)
 .then(function(response) {
  console.log('SUCCESS!', response.status, response.text);
  mensaje.textContent = "¡Ticket enviado con éxito!";
 form.reset();
-
-}, function(error) {
- 
+}, function(error) { 
   console.error('FAILED...', error);
   mensaje.textContent = "Error al enviar el ticket. Revise la consola.";
  <div class="container copyright">
-
-      <p>&copy; @2025 Ciudad de Los Ninos. Todos los derechos reservados.</p>
-                
-                    
+      <p>&copy; @2025 Ciudad de Los Ninos. Todos los derechos reservados.</p>                    
 </body>
 </html>
