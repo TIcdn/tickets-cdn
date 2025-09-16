@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciudad de Los Ninos - Sistema de Tickets Internos</title>
-    <link rel="icon" href="imagenes/logo.png">
-    <link rel="icon" href="https://www.ciudaddelosninoscr.org/pics/header-logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ciudad de Los Niños - Sistema de Tickets Internos</title>
+    <link rel="icon" href="https://www.ciudaddelosninoscr.org/pics/header-logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
         /* Estilos generales */
         * {
@@ -52,7 +51,7 @@
             color: #fff;
         }
 
-        /* Navegación */
+        /* Navegación (opcional, por si se agrega más adelante) */
         nav {
             background-color: #e61610;
             padding: 0.5rem 0;
@@ -113,7 +112,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             border-top: 4px solid #e61610;
         }
-        
+
         select {
             background-color: white;
             cursor: pointer;
@@ -124,7 +123,7 @@
             background-size: 1em;
             padding-right: 2.5rem;
         }
-        
+
         select:invalid {
             color: #757575;
         }
@@ -255,16 +254,13 @@
                 align-items: center;
                 padding: 1rem 0;
             }
-            
             .footer-container {
                 flex-direction: column;
                 text-align: center;
             }
-            
             .iconos-sociales {
                 justify-content: center;
             }
-            
             .footer-col.redes-sociales {
                 text-align: center;
             }
@@ -277,7 +273,7 @@
     <header>
         <div class="header-container">
             <div class="logo-container">
-                <img src="https://www.ciudaddelosninoscr.org//pics/header-logo.png" alt="logo" width="300" height="175">
+                <img src="https://www.ciudaddelosninoscr.org/pics/header-logo.png" alt="logo" width="300" height="175" />
             </div>
         </div>
     </header>
@@ -292,120 +288,102 @@
         <div class="formulario-contacto">
             <form method="post" id="form1">
                 <label for="nombreTxt">Nombre Completo:</label>
-                <input id="nombreTxt" name="nombre" type="text" placeholder="Escriba su nombre completo" required>
+                <input id="nombreTxt" name="nombre" type="text" placeholder="Escriba su nombre completo" required />
 
- <label for="AreaSelect">Area:</label>
- <select id="departamentoSelect" name="departamento" required>
-    <option value="" disabled selected>Seleccione un departamento</option>
-    <option value="Administracion">Administracion</option>
-    <option value="ACAI">ACAI</option>
-    <option value="Colegio-Profesores">Colegio-Profesores</option>
-    <option value="Cocina">Cocina</option>
-    <option value="Finca">Finca</option>
-    <option value="Formador Humano">Formador Humano</option> 
-    <option value="Frailes">Frailes</option> 
-    <option value="Miscelaneos">Miscelaneos</option>
+                <label for="departamentoSelect">Área:</label>
+                <select id="departamentoSelect" name="departamento" required>
+                    <option value="" disabled selected>Seleccione un departamento</option>
+                    <option value="Administracion">Administración</option>
+                    <option value="ACAI">ACAI</option>
+                    <option value="Colegio-Profesores">Colegio-Profesores</option>
+                    <option value="Cocina">Cocina</option>
+                    <option value="Finca">Finca</option>
+                    <option value="Formador Humano">Formador Humano</option>
+                    <option value="Frailes">Frailes</option>
+                    <option value="Miscelaneos">Misceláneos</option>
+                </select>
 
+                <label for="categoriaSelect">Categoría:</label>
+                <select id="categoriaSelect" name="categoria" required>
+                    <option value="" disabled selected>Seleccione una categoría</option>
+                    <option value="Hardware">Hardware</option>
+                    <option value="Software">Software</option>
+                    <option value="Red">Red</option>
+                    <option value="Cocina">Cocina</option>
+                    <option value="Finca">Finca</option>
+                    <option value="Infraestructura">Infraestructura</option>
+                    <option value="Servicios">Servicios</option>
+                    <option value="Aula">Aula</option>
+                    <option value="Cloud Campus">Cloud Campus</option>
+                </select>
 
-</select>
+                <label for="lugarTxt">Ubicación del inconveniente:</label>
+                <input id="lugarTxt" name="lugar" type="text" placeholder="Describa la ubicación" required />
 
- <label for="CategoriaSelect">Categoria:</label>
- <select id="departamentoSelect" name="Categoria" required>
-    <option value="" disabled selected>Seleccione una Categoria</option>
-    <option value="Hardware">Hardware</option>
-    <option value="Software">Software</option>
-    <option value="Red">Red</option>
-    <option value="Cocina">Cocina</option>
-    <option value="Finca">Finca</option>
-    <option value="Infraestructura">Infraestructura</option> 
-    <option value="Servicios">Servicios</option> 
-    <option value="Aula">Aula</option>
-    <option value="Cloud Campus">Cloud Campus</option>
- 
- 
-     
-</select>     
-  
-                <label for="lugarTxt">Ubicacion del inconveniente:</label>
-                <input id="lugarTxt" name="lugar" type="text" placeholder="Describa la ubicacion" required>
+                <label for="consecutivo">Número de Ticket:</label>
+                <input type="text" id="consecutivo" name="consecutivo" readonly />
 
-<label for="consecutivo">Numero de Ticket:</label>
-<input type="text" id="consecutivo" name="consecutivo" readonly>
-
-  <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const numeroAleatorio = Math.floor(1000 + Math.random() * 9000);
-    const ticketID = "TICKET-" + numeroAleatorio;
-    
-    document.getElementById("consecutivo").value = ticketID;
-});
-</script>
-
- 
-         <label for="mensajeTxt">Inconveniente:</label>
-         <textarea id="mensajeTxt" name="comentarios" placeholder="Describa detalladamente su problema o solicitud" required></textarea>
-
+                <label for="mensajeTxt">Inconveniente:</label>
+                <textarea id="mensajeTxt" name="comentarios" placeholder="Describa detalladamente su problema o solicitud" required></textarea>
 
                 <p class="centrado" id="mensajeAlert"></p>
-                <input type="submit" value="Enviar" class="botones" id="btnSend">
-
+                <input type="submit" value="Enviar" class="botones" id="btnSend" />
             </form>
         </div>
     </div>
 
-     <!-- Footer -->
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container footer-container">
             <div class="footer-col">
                 <h3>Contacto</h3>
                 <p><i class="fas fa-map-marker-alt"></i> Agua Caliente de Cartago, Costa Rica</p>
                 <p><i class="fas fa-envelope"></i> ti@ciudaddelosninoscr.org</p>
-
-                <p>&copy; 2025 Ciudad de Los Ninos. Todos los derechos reservados.</p>
-
+                <p>&copy; 2025 Ciudad de Los Niños. Todos los derechos reservados.</p>
             </div>
-            <div class="footer-col">
-            </div>
-            <div class="footer-col">  
-<script>
-document.addEventListener("DOMContentLoaded", function() {
+            <div class="footer-col"></div>
+            <div class="footer-col"></div>
+        </div>
+    </footer>
 
-    const numeroAleatorio = Math.floor(1000 + Math.random() * 9000);
-    const ticketID = "TICKET-" + numeroAleatorio;
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Inicialización y lógica del formulario
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('form1');
+            const mensaje = document.getElementById('mensajeAlert');
+            const consecutivo = document.getElementById('consecutivo');
 
-    document.getElementById("consecutivo").value = ticketID;
-});
-</script>
- 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="js/form.js"></script>
+            // Inicializar EmailJS
+            emailjs.init('2IIMj-dN305Vw_6cq'); // Public Key
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function() {
-    
-  emailjs.init("2IIMj-dN305Vw_6cq");
+            function generarTicket() {
+                const numeroAleatorio = Math.floor(1000 + Math.random() * 9000);
+                const ticketID = 'TICKET-' + numeroAleatorio;
+                consecutivo.value = ticketID;
+            }
 
+            generarTicket();
 
-const form = document.getElementById('form1');
-const mensaje = document.getElementById("mensajeAlert");
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                mensaje.textContent = 'Enviando ticket...';
 
-
-  form.addEventListener('submit', function(event) {
-event.preventDefault(); 
- mensaje.textContent = "Enviando ticket...";
-
-emailjs.sendForm('service_j79fepy', 'template_a2zgzqj', form)
-.then(function(response) {
- console.log('SUCCESS!', response.status, response.text);
- mensaje.textContent = "¡Ticket enviado con éxito!";
-form.reset();
-
-}, function(error) {
- 
-  console.error('FAILED...', error);
-  mensaje.textContent = "Error al enviar el ticket. Revise la consola.";
- <div class="container copyright">
-                 
+                emailjs
+                    .sendForm('service_j79fepy', 'template_a2zgzqj', form)
+                    .then(function (response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        mensaje.textContent = '¡Ticket enviado con éxito!';
+                        form.reset();
+                        generarTicket(); // nuevo ticket tras limpiar el formulario
+                    })
+                    .catch(function (error) {
+                        console.error('FAILED...', error);
+                        mensaje.textContent = 'Error al enviar el ticket. Revise la consola.';
+                    });
+            });
+        });
+    </script>
 </body>
 </html>
