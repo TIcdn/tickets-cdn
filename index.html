@@ -450,10 +450,7 @@
                     generarTicket(); // nuevo ticket tras limpiar el formulario
 
                     // Redirigir tras 5 segundos
-                    setTimeout(() => {
-                        window.location.href = 'https://www.ciudaddelosninoscr.org/';
-                    }, 1000);
-                })
+                  
                 .catch(function (error) {
                     console.error('FAILED...', error);
                     mensaje.textContent = 'Error al enviar el ticket. Revise la consola.';
