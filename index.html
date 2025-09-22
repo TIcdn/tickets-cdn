@@ -417,48 +417,53 @@
     </script>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('form1');
-        const mensaje = document.getElementById('mensajeAlert');
-        const consecutivo = document.getElementById('consecutivo');
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('form1');
+    const mensaje = document.getElementById('mensajeAlert');
+    const consecutivo = document.getElementById('consecutivo');
 
-        // Inicializar EmailJS
-        emailjs.init('2IIMj-dN305Vw_6cq'); // Public Key
+    // Inicializar EmailJS
+    emailjs.init('2IIMj-dN305Vw_6cq'); // Public Key
 
-        // Función para generar número de ticket
-        function generarTicket() {
-            const numeroAleatorio = Math.floor(1000 + Math.random() * 9000);
-            const ticketID = 'TICKET-' + numeroAleatorio;
-            consecutivo.value = ticketID;
-        }
+    // Función para generar número de ticket
+    function generarTicket() {
+        const numeroAleatorio = Math.floor(1000 + Math.random() * 9000);
+        const ticketID = 'TICKET-' + numeroAleatorio;
+        consecutivo.value = ticketID;
+    }
 
-        generarTicket();
+    generarTicket();
 
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            mensaje.textContent = 'Haz enviado el ticket. Espere...';
-            mensaje.style.color = '#002060';
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        mensaje.textContent = 'Haz enviado el ticket. Espere...';
+        mensaje.style.color = '#002060';
 
-            emailjs
-                .sendForm('service_j79fepy', 'template_a2zgzqj', form)
-                .then(function (response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    mensaje.textContent = '¡Ticket enviado con éxito! Redirigiendo...';
-                    mensaje.style.color = 'green';
-                    form.reset();
-                    generarTicket(); // nuevo ticket tras limpiar el formulario
+        emailjs
+            .sendForm('service_j79fepy', 'template_a2zgzqj', form)
+            .then(function (response) {
+                console.log('SUCCESS!', response.status, response.text);
+                mensaje.textContent = '¡Ticket enviado con éxito! Redirigiendo...';
+                mensaje.style.color = 'green';
+                form.reset();
+                generarTicket(); // nuevo ticket tras limpiar el formulario
 
-                    // Redirigir tras 5 segundos
-                  
-                .catch(function (error) {
-                    console.error('FAILED...', error);
-                    mensaje.textContent = 'Error al enviar el ticket. Revise la consola.';
-                    mensaje.style.color = 'red';
-                });
-        });
+                // Redirigir tras 5 segundos
+                setTimeout(() => {
+                    window.location.href = 'https://ticdn.github.io/tickets-cdn/';
+                }, 5000);
+            })
+            .catch(function (error) {
+                console.error('FAILED...', error);
+                mensaje.textContent = 'Error al enviar el ticket. Revise la consola.';
+                mensaje.style.color = 'red';
+            });
     });
-    </script>
+});
+</script>
+
 
   </body>
 </html>
