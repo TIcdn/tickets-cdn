@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const form = document.getElementById('form1');
 const mensaje = document.getElementById('mensajeAlert');
-const consecutivoInput = document.getElementById('consecutivo');
+const consecutivo = document.getElementById('consecutivo');
 
 const urlAPEX = 'https://oracleapex.com/ords/api_tickets/tickets_internos/';
 
@@ -188,7 +188,7 @@ emailjs.init('2IIMj-dN305Vw_6cq');
 
 function generarTicket(){
 const numeroAleatorio = Math.floor(1000 + Math.random() * 9000);
-consecutivoInput.value = 'TICKET-' + numeroAleatorio;
+consecutivo.value = 'TICKET-' + numeroAleatorio;
 }
 
 generarTicket();
@@ -205,7 +205,7 @@ nombre: document.getElementById('nombreTxt').value,
 departamento: document.getElementById('departamentoSelect').value,
 categoria: document.getElementById('categoriaSelect').value,
 lugar: document.getElementById('lugarTxt').value,
-consecutivo: consecutivoInput.value,
+consecutivo: consecutivo.value,
 mensaje: document.getElementById('mensajeTxt').value
 };
 
@@ -214,6 +214,8 @@ method:'POST',
 headers:{'Content-Type':'application/json'},
 body:JSON.stringify(datosFormulario)
 })
+
+.then(res => res.text())   // 🔧 CAMBIO AQUI
 
 .then(() => {
 
