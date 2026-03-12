@@ -450,6 +450,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 mensaje.style.color = 'green';
                 form.reset();
                 generarTicket(); // nuevo ticket tras limpiar el formulario
+                history.replaceState(null, null, location.href);
 
                 // Redirigir tras 5 segundos
                 setTimeout(() => {
@@ -469,4 +470,5 @@ document.addEventListener('DOMContentLoaded', function () {
   </body>
 
 </html>
+
 
