@@ -1,138 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ciudad de Los Niños - Sistema de Tickets Internos</title>
-
-<link rel="icon" href="https://www.ciudaddelosninoscr.org/pics/header-logo.png">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ciudad de Los Niños - Sistema de Tickets Internos</title>
+    <link rel="icon" href="https://www.ciudaddelosninoscr.org/pics/header-logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
+body{background:#f5f5f5;color:#002060;line-height:1.6;}
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Montserrat',sans-serif;
-}
+header{background:#002060;color:white;padding:1rem 0;box-shadow:0 2px 5px rgba(0,0,0,0.2);}
+.header-container{width:90%;max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;}
+.logo-container{display:flex;align-items:center;gap:10px;}
 
-body{
-background:#f5f5f5;
-color:#002060;
-}
+.section{padding:3rem 0;width:90%;max-width:1200px;margin:auto;}
 
-header{
-background:#002060;
-padding:1rem;
-text-align:center;
-}
+.page-title{text-align:center;margin-bottom:2rem;color:#002060;}
+.page-title h1{font-size:2rem;font-weight:700;}
+.page-title p{font-size:1.1rem;color:#444;}
 
-.section{
-padding:3rem;
-max-width:900px;
-margin:auto;
-}
+.formulario-contacto{background:white;padding:2rem;border-radius:8px;box-shadow:0 5px 15px rgba(0,0,0,0.1);border-top:4px solid #e61610;}
 
-.formulario-contacto{
-background:white;
-padding:2rem;
-border-radius:8px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-border-top:4px solid #e61610;
-}
+form{display:flex;flex-direction:column;gap:1.2rem;}
 
-form{
-display:flex;
-flex-direction:column;
-gap:1rem;
-}
+label{font-weight:600;color:#002060;margin-bottom:.3rem;}
 
-input,textarea,select{
-padding:10px;
-border:1px solid #ccc;
-border-radius:4px;
-}
+input,textarea,select{width:100%;padding:.8rem;border:1px solid #ccc;border-radius:4px;font-size:1rem;}
 
-textarea{
-min-height:140px;
-}
+textarea{resize:vertical;min-height:150px;}
 
-.botones{
-background:#e61610;
-color:white;
-border:none;
-padding:10px;
-cursor:pointer;
-font-weight:600;
-}
+.botones{background:#e61610;color:white;border:none;padding:.8rem 1.5rem;font-weight:600;border-radius:4px;cursor:pointer;}
+.botones:hover{background:#c01209;}
 
-.botones:hover{
-background:#c01209;
-}
+.centrado{text-align:center;margin-top:1rem;font-weight:600;color:#002060;}
 
-.centrado{
-text-align:center;
-font-weight:600;
-}
-
+.footer{background:#002060;color:white;padding:2rem 0;}
+.footer-container{width:90%;max-width:1200px;margin:auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;}
+.footer-col{flex:1;min-width:250px;}
 </style>
-</head>
+
+  </head>
 
 <body>
 
 <header>
-<img src="https://www.ciudaddelosninoscr.org/pics/header-logo.png" width="260">
+<div class="header-container">
+<div class="logo-container">
+<img src="https://www.ciudaddelosninoscr.org/pics/header-logo.png" width="300" height="175">
+</div>
+</div>
 </header>
 
 <div class="section">
 
-<h2>Sistema de Tickets Internos</h2>
-<p>Complete todos los campos</p>
+<div class="page-title">
+<h1>Sistema de Tickets Internos</h1>
+<p>Complete TODOS los campos del formulario para crear un nuevo ticket</p>
+</div>
 
 <div class="formulario-contacto">
 
-<form id="form1">
+<form method="post" id="form1">
 
-<label>Nombre Completo</label>
+<label>Nombre Completo:</label>
 <input id="nombreTxt" name="nombre" required>
 
-<label>Área</label>
+<label>Área:</label>
 <select id="departamentoSelect" name="departamento" required>
-
-<option disabled selected>Seleccione</option>
+<option disabled selected>Seleccione un departamento</option>
 <option value="Administracion">Administración</option>
 <option value="ACAI">ACAI</option>
-<option value="Colegio">Colegio</option>
+<option value="Colegio-Profesores">Colegio-Profesores</option>
 <option value="Cocina">Cocina</option>
 <option value="Finca">Finca</option>
 <option value="Formador Humano">Formador Humano</option>
 <option value="Frailes">Frailes</option>
 <option value="Miscelaneos">Misceláneos</option>
-
 </select>
 
-<label>Categoría</label>
-
+<label>Categoría:</label>
 <select id="categoriaSelect" name="categoria" required>
-
-<option disabled selected>Seleccione</option>
-<option>Hardware</option>
-<option>Software</option>
-<option>Red</option>
-<option>Infraestructura</option>
-<option>Servicios</option>
-
+<option disabled selected>Seleccione una categoría</option>
+<option value="Hardware">Hardware</option>
+<option value="Software">Software</option>
+<option value="Red">Red</option>
+<option value="Cocina">Cocina</option>
+<option value="Finca">Finca</option>
+<option value="Infraestructura">Infraestructura</option>
+<option value="Servicios">Servicios</option>
+<option value="Aula">Aula</option>
+<option value="Cloud Campus">Cloud Campus</option>
+<option value="Chromebook">Chromebook</option>
 </select>
 
-<label>Ubicación del inconveniente</label>
+<label>Ubicación:</label>
 <input id="lugarTxt" name="lugar" required>
 
-<label>Número de Ticket</label>
-<input id="consecutivo" name="consecutivo" readonly>
+<label>Número de Ticket:</label>
+<input type="text" id="consecutivo" name="consecutivo" readonly>
 
-<label>Inconveniente</label>
+<label>Inconveniente:</label>
 <textarea id="mensajeTxt" name="comentarios" required></textarea>
 
 <p class="centrado" id="mensajeAlert"></p>
@@ -140,72 +110,126 @@ font-weight:600;
 <input type="submit" value="Enviar" class="botones">
 
 </form>
-
 </div>
 </div>
 
-<footer style="background:#002060;color:white;text-align:center;padding:20px">
-Ciudad de Los Niños - Departamento de TI
+<footer class="footer">
+<div class="footer-container">
+<div class="footer-col">
+<h3>Contacto</h3>
+<p>Agua Caliente de Cartago, Costa Rica</p>
+<p>ti@ciudaddelosninoscr.org</p>
+<p>© 2025 Ciudad de Los Niños</p>
+</div>
+</div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 <script>
+document.addEventListener('DOMContentLoaded', () => {
 
-document.addEventListener("DOMContentLoaded",function(){
+const form=document.getElementById('form1');
+const mensaje=document.getElementById('mensajeAlert');
+const consecutivoInput=document.getElementById('consecutivo');
 
-const form=document.getElementById("form1");
-const mensaje=document.getElementById("mensajeAlert");
-const consecutivo=document.getElementById("consecutivo");
-
-emailjs.init("2IIMj-dN305Vw_6cq");
+const urlAPEX='https://oracleapex.com/ords/api_tickets/tickets_internos/';
 
 function generarTicket(){
-
-const numero=Math.floor(1000+Math.random()*9000);
-consecutivo.value="TICKET-"+numero;
-
+const timestamp=new Date().getTime();
+const random=Math.floor(100+Math.random()*900);
+consecutivoInput.value='TICKET-'+timestamp.toString().slice(-4)+random;
 }
 
 generarTicket();
 
-form.addEventListener("submit",function(e){
+form.addEventListener('submit',(event)=>{
 
-e.preventDefault();
+event.preventDefault();
 
-mensaje.innerHTML="Enviando ticket...";
-mensaje.style.color="#002060";
+mensaje.textContent='Enviando ticket...';
+mensaje.style.color='#002060';
 
-emailjs.sendForm(
-"service_j79fepy",
-"template_a2zgzqj",
-form
-)
+const datosFormulario={
+nombre:document.getElementById('nombreTxt').value,
+departamento:document.getElementById('departamentoSelect').value,
+categoria:document.getElementById('categoriaSelect').value,
+lugar:document.getElementById('lugarTxt').value,
+consecutivo:consecutivoInput.value,
+mensaje:document.getElementById('mensajeTxt').value
+};
 
-.then(function(){
+fetch(urlAPEX,{
+method:'POST',
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify(datosFormulario)
+})
+.then(res=>res.json())
+.catch(error=>{
+console.error(error);
+mensaje.textContent='Error al enviar el ticket';
+mensaje.style.color='red';
+});
 
-mensaje.innerHTML="Ticket enviado correctamente";
-mensaje.style.color="green";
+});
+});
+</script>
 
-form.reset();
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+
+const form=document.getElementById('form1');
+const mensaje=document.getElementById('mensajeAlert');
+const consecutivo=document.getElementById('consecutivo');
+
+emailjs.init('2IIMj-dN305Vw_6cq');
+
+function generarTicket(){
+const numeroAleatorio=Math.floor(1000+Math.random()*9000);
+consecutivo.value='TICKET-'+numeroAleatorio;
+}
 
 generarTicket();
+
+form.addEventListener('submit',function(event){
+
+event.preventDefault();
+
+mensaje.textContent='Haz enviado el ticket. Espere...';
+mensaje.style.color='#002060';
+
+emailjs.sendForm('service_j79fepy','template_a2zgzqj',form)
+
+.then(function(response){
+
+console.log(response);
+
+mensaje.textContent='¡Ticket enviado con éxito! Redirigiendo...';
+mensaje.style.color='green';
+
+history.replaceState(null,null,location.href);
+
+form.reset();
+generarTicket();
+
+setTimeout(()=>{
+window.location.href='https://ticdn.github.io/tickets-cdn/';
+},5000);
 
 })
 
 .catch(function(error){
 
-console.log(error);
+console.error(error);
 
-mensaje.innerHTML="Error al enviar el ticket";
-mensaje.style.color="red";
-
-});
+mensaje.textContent='Error al enviar el ticket.';
+mensaje.style.color='red';
 
 });
 
 });
 
+});
 </script>
 
 </body>
