@@ -444,13 +444,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         emailjs
             .sendForm('service_j79fepy', 'template_a2zgzqj', form)
-            .then(function (response) {
-                console.log('SUCCESS!', response.status, response.text);
-                mensaje.textContent = '¡Ticket enviado con éxito! Redirigiendo...';
-                mensaje.style.color = 'green';
-                form.reset();
-                generarTicket(); // nuevo ticket tras limpiar el formulario
-                history.replaceState(null, null, location.href);
+            ..then(function (response) {
+    console.log('SUCCESS!', response.status, response.text);
+    mensaje.textContent = '¡Ticket enviado con éxito! Redirigiendo...';
+    mensaje.style.color = 'green';
+
+    history.replaceState(null, null, location.href);
+
+    form.reset();
+    generarTicket();
 
                 // Redirigir tras 5 segundos
                 setTimeout(() => {
@@ -470,5 +472,6 @@ document.addEventListener('DOMContentLoaded', function () {
   </body>
 
 </html>
+
 
 
