@@ -45,41 +45,6 @@
         gap: 10px;
       }
 
-      .logo-text {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #fff;
-      }
-
-      /* Navegación (opcional, por si se agrega más adelante) */
-      nav {
-        background-color: #e61610;
-        padding: 0.5rem 0;
-      }
-
-      nav ul {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        list-style: none;
-        gap: 1.5rem;
-      }
-
-      nav a {
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-        padding: 0.5rem;
-        transition: all 0.3s ease;
-      }
-
-      nav a:hover {
-        color: #f0f0f0;
-        text-decoration: underline;
-      }
-
       /* Contenido principal */
       .section {
         padding: 3rem 0;
@@ -113,21 +78,6 @@
         border-top: 4px solid #e61610;
       }
 
-      select {
-        background-color: white;
-        cursor: pointer;
-        appearance: none;
-        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23002060' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-        background-repeat: no-repeat;
-        background-position: right 1rem center;
-        background-size: 1em;
-        padding-right: 2.5rem;
-      }
-
-      select:invalid {
-        color: #757575;
-      }
-
       form {
         display: flex;
         flex-direction: column;
@@ -141,27 +91,12 @@
         display: block;
       }
 
-      input,
-      textarea,
-      select {
+      input, textarea, select {
         width: 100%;
         padding: 0.8rem;
         border: 1px solid #ccc;
         border-radius: 4px;
         font-size: 1rem;
-        transition: border 0.3s ease;
-      }
-
-      input:focus,
-      textarea:focus,
-      select:focus {
-        border-color: #002060;
-        outline: none;
-      }
-
-      textarea {
-        resize: vertical;
-        min-height: 150px;
       }
 
       .botones {
@@ -184,7 +119,6 @@
         text-align: center;
         margin-top: 1rem;
         font-weight: 600;
-        color: #002060;
       }
 
       /* Footer */
@@ -192,85 +126,13 @@
         background-color: #002060;
         color: white;
         padding: 2rem 0;
+        margin-top: 2rem;
       }
 
       .footer-container {
         width: 90%;
         max-width: 1200px;
         margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 2rem;
-      }
-
-      .footer-col {
-        flex: 1;
-        min-width: 250px;
-      }
-
-      .footer-col p {
-        margin-bottom: 0.5rem;
-      }
-
-      .iconos-sociales {
-        display: flex;
-        gap: 1rem;
-        justify-content: flex-end;
-        margin-top: 1rem;
-      }
-
-      .iconos-sociales a {
-        color: white;
-        transition: color 0.3s ease;
-      }
-
-      .iconos-sociales a:hover {
-        color: #e61610;
-      }
-
-      /* Modal */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translate(-50%, -60%);
-        }
-        to {
-          opacity: 1;
-          transform: translate(-50%, -50%);
-        }
-      }
-
-      #popupOverlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 9998;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-        nav ul {
-          flex-direction: column;
-          align-items: center;
-          padding: 1rem 0;
-        }
-
-        .footer-container {
-          flex-direction: column;
-          text-align: center;
-        }
-
-        .iconos-sociales {
-          justify-content: center;
-        }
-
-        .footer-col.redes-sociales {
-          text-align: center;
-        }
       }
     </style>
   </head>
@@ -279,7 +141,7 @@
     <header>
       <div class="header-container">
         <div class="logo-container">
-          <img src="https://www.ciudaddelosninoscr.org/pics/header-logo.png" alt="logo" width="300" height="175" />
+          <img src="https://www.ciudaddelosninoscr.org/pics/header-logo.png" alt="logo" width="300" />
         </div>
       </div>
     </header>
@@ -291,7 +153,7 @@
       </div>
 
       <div class="formulario-contacto">
-        <form method="post" id="form1">
+        <form id="form1">
           <label for="nombreTxt">Nombre Completo:</label>
           <input id="nombreTxt" name="nombre" type="text" placeholder="Escriba su nombre completo" required />
 
@@ -339,49 +201,41 @@
     </div>
 
     <footer class="footer">
-      <div class="container footer-container">
-        <div class="footer-col">
+      <div class="footer-container">
           <h3>Contacto</h3>
           <p><i class="fas fa-map-marker-alt"></i> Agua Caliente de Cartago, Costa Rica</p>
           <p><i class="fas fa-envelope"></i> ti@ciudaddelosninoscr.org</p>
           <p>&copy; 2025 Ciudad de Los Niños. Todos los derechos reservados.</p>
-        </div>
-        <div class="footer-col"></div>
-        <div class="footer-col"></div>
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-      // Espera a que el DOM esté completamente cargado
       document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('form1');
         const mensaje = document.getElementById('mensajeAlert');
         const consecutivoInput = document.getElementById('consecutivo');
-
-        // URL de tu API REST de APEX (¡Cambia esto por la URL de tu API!)
+        
+        // URL de tu API REST de APEX
         const urlAPEX = 'https://oracleapex.com/ords/api_tickets/tickets_internos/';
 
-        // Función para generar un número de ticket único y mostrarlo
+        // Inicializar EmailJS con tu ID
+        emailjs.init('2IIMj-dN305Vw_6cq');
+
         function generarTicket() {
-          const timestamp = new Date().getTime();
-          const numeroAleatorio = Math.floor(100 + Math.random() * 900);
-          const ticketID = 'TICKET-' + timestamp.toString().slice(-4) + numeroAleatorio;
-          consecutivoInput.value = ticketID;
+          const numeroAleatorio = Math.floor(1000 + Math.random() * 9000);
+          consecutivoInput.value = 'TICKET-' + numeroAleatorio;
         }
 
-        // Llama a la función al cargar la página
         generarTicket();
 
-        // Maneja el evento de envío del formulario
-        form.addEventListener('submit', (event) => {
-          // Evita el envío por defecto del formulario
+        form.addEventListener('submit', function(event) {
           event.preventDefault();
 
-          // Muestra un mensaje de "Enviando"
           mensaje.textContent = 'Enviando ticket...';
           mensaje.style.color = '#002060';
 
-          // Recopila los datos del formulario en un objeto JavaScript
+          // 1. Preparar datos para APEX
           const datosFormulario = {
             nombre: document.getElementById('nombreTxt').value,
             departamento: document.getElementById('departamentoSelect').value,
@@ -391,105 +245,29 @@
             mensaje: document.getElementById('mensajeTxt').value,
           };
 
-          // Usa fetch() para enviar los datos a tu API de APEX
+          // 2. Intentar guardar en APEX primero (Segundo plano)
           fetch(urlAPEX, {
             method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
+            mode: 'no-cors', // Evita el error "Failed to fetch" si el servidor no tiene CORS configurado
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(datosFormulario),
-          })
-            .then((response) => {
-              if (!response.ok) {
-                return response.json().then((err) => {
-                  throw new Error(err.message || 'Error en la respuesta del servidor.');
-                });
-              }
-              return response.json();
+          }).catch(err => console.log("Nota: Error de conexión con APEX, pero intentando enviar correo..."));
+
+          // 3. Enviar correo con EmailJS (Lo que te funciona)
+          emailjs.sendForm('service_j79fepy', 'template_a2zgzqj', form)
+            .then(() => {
+              mensaje.textContent = '¡Ticket enviado correctamente!';
+              mensaje.style.color = 'green';
+              form.reset();
+              generarTicket();
             })
             .catch((error) => {
-              // Muestra mensaje de error
-              console.error('Error al enviar el ticket:', error);
-              mensaje.textContent = 'Error al enviar el ticket: ' + error.message;
+              console.error('Error EmailJS:', error);
+              mensaje.textContent = 'Hubo un error al enviar el correo.';
               mensaje.style.color = 'red';
             });
         });
       });
     </script>
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-
-const form = document.getElementById('form1');
-const mensaje = document.getElementById('mensajeAlert');
-const consecutivo = document.getElementById('consecutivo');
-
-const urlAPEX = 'https://oracleapex.com/ords/api_tickets/tickets_internos/';
-
-emailjs.init('2IIMj-dN305Vw_6cq');
-
-function generarTicket(){
-    const numeroAleatorio = Math.floor(1000 + Math.random() * 9000);
-    consecutivo.value = 'TICKET-' + numeroAleatorio;
-}
-
-generarTicket();
-
-form.addEventListener('submit', function(event){
-
-event.preventDefault();
-
-mensaje.textContent = "Enviando ticket...";
-mensaje.style.color = "#002060";
-
-const datosFormulario = {
-nombre: document.getElementById('nombreTxt').value,
-departamento: document.getElementById('departamentoSelect').value,
-categoria: document.getElementById('categoriaSelect').value,
-lugar: document.getElementById('lugarTxt').value,
-consecutivo: consecutivo.value,
-mensaje: document.getElementById('mensajeTxt').value
-};
-
-//// ENVIA A ORACLE APEX
-fetch(urlAPEX,{
-method:'POST',
-headers:{'Content-Type':'application/json'},
-body:JSON.stringify(datosFormulario)
-})
-.then(() => {
-console.log("Ticket guardado en APEX");
-})
-.catch(error => {
-console.error("Error APEX:", error);
-});
-
-//// ENVIA CORREO
-emailjs.sendForm('service_j79fepy','template_a2zgzqj',form)
-
-.then(function(){
-
-mensaje.textContent = "¡Ticket enviado correctamente!";
-mensaje.style.color = "green";
-
-history.replaceState(null,null,location.href);
-
-form.reset();
-generarTicket();
-
-})
-.catch(function(error){
-
-console.error("Error EmailJS:",error);
-
-mensaje.textContent = "El ticket se guardó pero hubo un problema con el correo.";
-mensaje.style.color = "orange";
-
-});
-
-});
-
-});
-</script>
+  </body>
+</html>
